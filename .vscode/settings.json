@@ -1,0 +1,9 @@
+{
+    "robloxLsp.diagnostics.globals": [
+        "hookfunction",
+        "getupvalue",
+        "getrenv",
+        "islclosure",
+        "getgc"
+    ]
+}

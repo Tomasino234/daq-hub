@@ -21,6 +21,21 @@ function main.init(window, tableTabs)
         })
 
         --=========================--
+        --==[ EXPLOIT FUNCTIONS ]==--
+
+        local function InfiniteStamina()
+            local oldStamina
+            oldStamina = hookfunction(getupvalue(getrenv()._G.S_Take, 2), function(v1, ...)
+                if settings.InfiniteStamina then
+                    v1 = 0
+                end
+                return oldStamina(v1, ...)
+            end)
+        end
+        
+        InfiniteStamina()
+
+        --=========================--
     end)
 end
 

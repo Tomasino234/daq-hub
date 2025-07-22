@@ -3,6 +3,7 @@ local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 
 function self.init()
+    task.spawn(function()
     local Camera = workspace.CurrentCamera
     local screenpart = Instance.new("Part", Camera)
     screenpart.CFrame = Camera.CFrame * CFrame.new(0,0,-1.2) * CFrame.Angles(0,math.rad(180),0)
@@ -92,8 +93,7 @@ function self.init()
 
     con:Disconnect()
     screenpart:Destroy()
+ end)
 end
-
-self.init()
 
 return self

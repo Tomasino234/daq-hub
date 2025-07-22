@@ -1,4 +1,7 @@
-task.spawn(function()
+local self = {}
+
+function self.init()
+    task.spawn(function()
 	task.wait(5) -- wait for Adonis to load
 
 	local suspiciousStrings = {
@@ -43,3 +46,6 @@ task.spawn(function()
 		end
 	end
 end)
+end
+
+return self
